@@ -1,13 +1,32 @@
 {
   "name": "student-management-system",
   "version": "1.0.0",
-  "description": "",
+  "description": "Student Management System",
+  "homepage": "https://github.com/muruguganesan/student-management-system#readme",
+  "bugs": {
+    "url": "https://github.com/muruguganesan/student-management-system/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muruguganesan/student-management-system.git"
+  },
+  "license": "ISC",
+  "author": "Murugu ganesan",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "dependencies": {
+    "body-parser": "^2.4.0",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "express-handlebars": "^9.0.4",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
 }

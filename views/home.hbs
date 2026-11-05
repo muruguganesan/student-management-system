@@ -1,0 +1,33 @@
+<h1>Student Management System</h3>
+<table>
+    <thead></thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    <tbody>
+       {{#each students}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{name}}</td>
+            <td>{{age}}</td>
+            <td>{{location}}</td>
+           <td>
+                <div class="action_wrapper">
+                    <a href="" class="edit">Edit</a>
+                </div>
+            </td>
+            <td>
+                <div class="action_wrapper">
+                    <a href="" class="delete">Delete</a>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

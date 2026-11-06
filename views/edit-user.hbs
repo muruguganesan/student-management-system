@@ -1,0 +1,21 @@
+<h1>Update User</h1>
+<form method="post" action="/update/{{student.id}}">
+    <div class="form_wrapper">
+        <div class="form_group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" autocomplete="off"  value="{{student.NAME}}" onchange=""/>
+
+        </div>
+        <div class="form_group">
+            <label for="age">Age</label>
+            <input type="text" name="age" id="age" value="{{student.age}}"  />
+        </div>
+        <div class="form_group">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city"  value="{{student.city}}" />
+        </div>
+    </div>
+    <div class="submit_btn_wrap">
+        <button type="Submit" class="submit_btn">Submit</button>
+    </div>
+</form>

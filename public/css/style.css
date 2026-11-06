@@ -15,6 +15,7 @@ html {
 * {
     margin: 0;
     padding: 0;
+     box-sizing: border-box;
 }
 h1 {
     color: tomato;
@@ -39,18 +40,68 @@ table th {
 table tr:nth-child(even) {
     background-color: rgba(0, 0, 0, 0.1);
 }
-.edit, .delete {
+.edit, .delete, .add_student, .submit_btn  {
     text-decoration: none;
     color: white;
-    background-color: red;
     padding: 8px 16px;
     border-radius: 5px;
     display: inline-block;
     cursor: pointer;
+    transition: background-color 0.8s, color 0.8s;
+}
+.delete {
+    background-color: red;
+    border: 1px solid red;
 }
 .edit {
     background-color: blueviolet;
+    border: 1px solid blueviolet;
 }
-.action_wrapper {
+.add_student, .submit_btn {
+    background-color: green;
+    border: 1px solid green;
+}
+.action_wrapper, .submit_btn_wrap {
     text-align: center;
+}
+.add_student_wrap {
+    text-align: right;
+}
+.edit:hover, .delete:hover, .add_student:hover, .submit_btn:hover {
+    background-color: transparent;
+}
+.edit:hover {
+    color: blueviolet;
+}
+.delete:hover {
+    color: red;
+}
+.add_student:hover, .submit_btn:hover {
+    color: green;
+}
+.form_group {
+      margin-top: 10px;
+}
+.form_group label, .form_group input {
+    display: block;
+    width: 100%;
+}
+.form_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 30px;
+}
+.form_group input {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #afafaf;
+    outline: none;
+}
+.submit_btn_wrap {
+    padding-top: 30px;
+}
+.submit_btn {
+    font-size: 15px;
+    min-width: 200px;
 }

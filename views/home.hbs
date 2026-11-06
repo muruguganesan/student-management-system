@@ -1,4 +1,7 @@
-<h1>Student Management System</h3>
+<h1>Student Management System</h1>
+<div class="add_student_wrap">
+    <a href="/add-student" class="add_student">Add Students</a>
+</div>
 <table>
     <thead></thead>
     <tr>
@@ -11,20 +14,25 @@
 
     </tr>
     <tbody>
-       {{#each students}}
+        {{#each rows}}
         <tr>
             <td>{{id}}</td>
-            <td>{{name}}</td>
+            <td>{{NAME}}</td>
             <td>{{age}}</td>
-            <td>{{location}}</td>
-           <td>
+            <td>{{city}}</td>
+            <td>
                 <div class="action_wrapper">
-                    <a href="" class="edit">Edit</a>
+                    <a href="edit-student/{{id}}" class="edit">Edit</a>
                 </div>
             </td>
             <td>
                 <div class="action_wrapper">
-                    <a href="" class="delete">Delete</a>
+                    {{!-- <a onclick="return confirm('Are you sure?')" href="/delete-student/{{id}}"
+                        class="delete">Delete</a> --}}
+                    <form method="POST" action="/delete-student/{{id}}">
+                        <button type="submit" class="delete">Delete</button>
+
+                    </form>
                 </div>
             </td>
         </tr>

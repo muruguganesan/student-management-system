@@ -5,10 +5,11 @@ const { engine } = require("express-handlebars");
 const exphbar = require("express-handlebars");
 const bodyParser = require('body-parser'); // used to handle JSON data
 const mysql = require('mysql');
-const processEnv = process.env;
 // Initialize Dotenv
 dotenv.config();
+const processEnv = process.env;
 const PORT = processEnv.PORT || 5000;
+
 
 
 
@@ -26,16 +27,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // MySQL
-const connection = mysql.createPool({
-    connectionLimit: 10,
-    host: processEnv.DB_HOST,
-    database: processEnv.DB_NAME,
-    user: processEnv.DB_USERNAME,
-    password: processEnv.DB_PASSWORD
-});
+// const dbDatas = mysql.createPool({
+//     connectionLimit: 10,
+//     host: processEnv.DB_HOST,
+//     database: processEnv.DB_NAME,
+//     user: processEnv.DB_USERNAME,
+//     password: processEnv.DB_PASSWORD
+// });
 
-// Check Database Connection
-connection.getConnection
+
 
 // Configure handlebars
 const handlebars = exphbar.create({
@@ -50,6 +50,8 @@ app.set('view engine', 'hbs');
 
 
 // API Routes
+const routes = require("./server/routes/students_route");
+app.use('/', routes);
 app.get('/home', (req, res) => {
     const employee = {
         name: "Murugan",
@@ -59,35 +61,7 @@ app.get('/home', (req, res) => {
     };
     res.render('home', { employee });
 });
-app.get('/', (req, res) => {
-    const students = [
-        {
-            id: 1,
-            name: "Ligesh",
-            age: 25,
-            location: "Chennai"
-        },
-        {
-            id: 2,
-            name: "Vignesh",
-            age: 20,
-            location: "Coimbatore"
-        },
-        {
-            id: 3,
-            name: "Rakesh",
-            age: 25,
-            location: "Trichy"
-        },
-        {
-            id: 4,
-            name: "Sudha",
-            age: 20,
-            location: "Chennai"
-        },
-    ];
-    res.render("home", {students});
-});
+
 
 app.get('/loops', (req, res) => {
 
